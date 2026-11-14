@@ -1,0 +1,131 @@
+{
+  "recorded_at": "2026-11-14T17:11:14.158317+00:00",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "torch": "2.15.0+cpu",
+  "settings": {
+    "do_sample": false,
+    "max_new_tokens": 240,
+    "repetition_penalty": 1.08,
+    "device": "cpu"
+  },
+  "corpus_sha256": "10cc6188371606e434ad79c5753b842d9c8a038739acebfe85f35441343a89d8",
+  "method": "Same checkpoint, questions and decoding settings. Baseline receives no documents. RAG uses the production retrieval, prompt, abstention and verified-record fallback; it is an application comparison, not an isolated retrieval benchmark.",
+  "results": [
+    {
+      "question": "Who won the regular-season MVP in 2024-25?",
+      "model_only": {
+        "answer": "In 2024-25, the regular-season MVP was **Jared Goff**. He played for the New York Knicks and led them to a playoff appearance with a record of 18-16.",
+        "seconds": 10.0,
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an NBA history assistant. Answer concisely and factually. If you do not know, say you do not know. Distinguish regular-season MVP from Finals MVP."
+          },
+          {
+            "role": "user",
+            "content": "Who won the regular-season MVP in 2024-25?"
+          }
+        ]
+      },
+      "rag": {
+        "answer": "regular-season MVP — 2024-25 — Shai Gilgeous-Alexander, Oklahoma City Thunder [1]",
+        "answer_mode": "generated",
+        "sources": [
+          {
+            "id": "https://www.nba.com/news/history-mvp-award-winners#3",
+            "title": "Regular-season MVP winners",
+            "url": "https://www.nba.com/news/history-mvp-award-winners",
+            "fetched_at": "2026-11-14T16:11:53.764663+00:00",
+            "text": "Regular-season MVP winners\n2024-25 — Shai Gilgeous-Alexander, Oklahoma City Thunder ( Voting )",
+            "citation": 1,
+            "similarity": 0.693,
+            "focused": true
+          }
+        ],
+        "seconds": 4.3,
+        "model": "Qwen/Qwen2.5-0.5B-Instruct"
+      }
+    },
+    {
+      "question": "Who won Rookie of the Year in 2024-25?",
+      "model_only": {
+        "answer": "In 2024-25, the New Orleans Pelicans' rookie of the year was Klay Thompson. He was selected as the first overall pick by the team in the 2024 NBA draft.",
+        "seconds": 4.3,
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an NBA history assistant. Answer concisely and factually. If you do not know, say you do not know. Distinguish regular-season MVP from Finals MVP."
+          },
+          {
+            "role": "user",
+            "content": "Who won Rookie of the Year in 2024-25?"
+          }
+        ]
+      },
+      "rag": {
+        "answer": "Rookie of the Year winners - 2024-25 - Stephon Castle, San Antonio Spurs [1]",
+        "answer_mode": "generated",
+        "sources": [
+          {
+            "id": "https://www.nba.com/news/history-rookie-of-the-year-winners#3",
+            "title": "Rookie of the Year winners",
+            "url": "https://www.nba.com/news/history-rookie-of-the-year-winners",
+            "fetched_at": "2026-11-14T16:12:01.217877+00:00",
+            "text": "Rookie of the Year winners\n2024-25 — Stephon Castle, San Antonio Spurs ( Voting )",
+            "citation": 1,
+            "similarity": 0.62,
+            "focused": true
+          }
+        ],
+        "seconds": 2.8,
+        "model": "Qwen/Qwen2.5-0.5B-Instruct"
+      }
+    },
+    {
+      "question": "Who won the 2023 NBA championship and Finals MVP?",
+      "model_only": {
+        "answer": "The 2023 NBA championship was won by the Los Angeles Lakers, while the Finals MVP was LeBron James of the Cleveland Cavaliers.",
+        "seconds": 2.6,
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an NBA history assistant. Answer concisely and factually. If you do not know, say you do not know. Distinguish regular-season MVP from Finals MVP."
+          },
+          {
+            "role": "user",
+            "content": "Who won the 2023 NBA championship and Finals MVP?"
+          }
+        ]
+      },
+      "rag": {
+        "answer": "Official archive records:\n- NBA Finals MVP winners: 2022-23: Nikola Jokic, Denver Nuggets [1]\n- NBA champions: 2022-23 — Denver Nuggets def. Miami Heat, 4-1 [2]",
+        "answer_mode": "verified_records",
+        "sources": [
+          {
+            "id": "https://www.nba.com/news/history-finals-mvp-winners#5",
+            "title": "NBA Finals MVP winners",
+            "url": "https://www.nba.com/news/history-finals-mvp-winners",
+            "fetched_at": "2026-11-14T16:11:54.948330+00:00",
+            "text": "NBA Finals MVP winners\n2022-23: Nikola Jokic, Denver Nuggets",
+            "citation": 1,
+            "similarity": 0.737,
+            "focused": true
+          },
+          {
+            "id": "https://www.nba.com/news/history-nba-champions#5",
+            "title": "NBA champions",
+            "url": "https://www.nba.com/news/history-nba-champions",
+            "fetched_at": "2026-11-14T16:11:56.198948+00:00",
+            "text": "NBA champions\n2022-23 — Denver Nuggets def. Miami Heat, 4-1",
+            "citation": 2,
+            "similarity": 0.635,
+            "focused": true
+          }
+        ],
+        "seconds": 4.1,
+        "model": "Qwen/Qwen2.5-0.5B-Instruct"
+      }
+    }
+  ]
+}
