@@ -1,0 +1,20 @@
+[project]
+name = "nba-local-rag"
+version = "0.1.0"
+description = "Official NBA history, local Hugging Face models, and a source-grounded web chat"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "requests>=2.32,<3",
+  "beautifulsoup4>=4.12,<5", "torch>=2.6,<3", "transformers>=4.48,<5",
+  "numpy>=2,<3", "safetensors>=0.5,<1"
+]
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1"]
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+[tool.pytest.ini_options]
+pythonpath = ["."]
