@@ -1,6 +1,6 @@
 # CourtSide — local NBA RAG
 
-A working application built from the notebooks' **load → split → embed → retrieve → generate** pipeline. Ask about NBA MVPs, Finals MVPs, champions, Defensive Player of the Year, and Rookie of the Year in a web chat. Answers include expandable retrieved passages and official source links.
+A working NBA application using the **load → split → embed → retrieve → generate** pipeline. Ask about NBA MVPs, Finals MVPs, champions, Defensive Player of the Year, and Rookie of the Year in a web chat. Answers include expandable retrieved passages and official source links.
 
 **No OpenAI, paid inference, API keys, or cloud model calls.** Generation uses [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct); embeddings use [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2). Both are Apache-2.0 models downloaded from Hugging Face and run in the Python process on CPU. The small default model fits modest hardware; factual accuracy still needs source checking.
 
@@ -90,8 +90,8 @@ uv run pytest -q
 - `nba_rag/engine.py`: local embeddings, persistent index, retrieval and generation
 - `nba_rag/app.py`: FastAPI status and chat endpoints
 - `nba_rag/static/`: responsive browser UI with source inspection
-- `nba_local_rag.ipynb`: walkthrough using the same application code
+- `nba_rag_results.ipynb`: concise, executed model-versus-RAG results, comments, evidence checks, and project test outputs
 
-Bind to loopback for personal use. This app has no authentication and is intended to run locally. Original lesson notebooks are preserved, including existing local edits; they still contain their original OpenAI examples.
+Bind to loopback for personal use. This app has no authentication and is intended to run locally.
 
-The original [RAG From Scratch video playlist](https://youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x&feature=shared) explains the concepts behind the notebooks.
+The original [RAG From Scratch video playlist](https://youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x&feature=shared) explains the concepts behind the RAG pipeline.
